@@ -31,6 +31,7 @@ class App extends Component {
 
   render() {
     const { contacts, filter } = this.state;
+
     return (
       <main>
         <h2>Phonebook</h2>
