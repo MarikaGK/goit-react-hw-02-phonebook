@@ -21,7 +21,11 @@ class ContactForm extends Component {
     if (this.state.contacts.find(e => e.name === this.state.name)) {
       return alert(`${this.state.name} is already in contacts`);
     }
-    const newContact = { id: nanoid(), name: this.state.name, number: this.state.number };
+    const newContact = {
+      id: nanoid(),
+      name: this.state.name,
+      number: this.state.number,
+    };
     this.props.onFormSubmit(newContact);
     this.reset();
   };

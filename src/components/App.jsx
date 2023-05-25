@@ -14,16 +14,14 @@ class App extends Component {
     filter: '',
   };
 
-  handleFormSubmit = (newContact) => {
-this.setState( { contacts: [...this.state.contacts, newContact]
-} )
+  handleFormSubmit = newContact => {
+    this.setState({ contacts: [...this.state.contacts, newContact] });
   };
 
   handleChange = evt => {
     const { name, value } = evt.target;
     this.setState({ [name]: value });
   };
-
 
   handleDelete = evt => {
     evt.preventDefault();
@@ -36,10 +34,7 @@ this.setState( { contacts: [...this.state.contacts, newContact]
     return (
       <main>
         <h2>Phonebook</h2>
-        <ContactForm
-    contacts={contacts}
-    onFormSubmit={this.handleFormSubmit}
-        />
+        <ContactForm contacts={contacts} onFormSubmit={this.handleFormSubmit} />
         <h2>Contacts</h2>
         <Filter value={filter} onChange={this.handleChange} />
         <ContactList
