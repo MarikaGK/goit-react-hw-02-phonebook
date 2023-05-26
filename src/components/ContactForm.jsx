@@ -8,6 +8,12 @@ class ContactForm extends Component {
     contacts: this.props.contacts,
   };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.contacts !== this.props.contacts) {
+      this.setState({ contacts: this.props.contacts });
+    }
+  }
+
   handleChange = evt => {
     const { name, value } = evt.target;
     this.setState({ [name]: value });
